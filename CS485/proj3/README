@@ -1,0 +1,70 @@
+Program 3 by Kevin Logan and Carl Groathouse
+
+Files include:
+README
+upsh.c
+p3extra.c
+csapp.c
+csapp.h
+Makefile
+
+Documentation by Kevin Logan and Carl Groathouse
+
+Description: For program 3 I wrote a shell that allows the user to interactively execute Unix programs. The shell, called 
+the User-Defined Plugging Shell (upsh), will read commands typed by the user and then execute them. It will also allow
+ users to enhance the functionality of upsh by writing pluggins that can be loaded into the shell (as a shared library).
+
+Built-in Commands:
+
+% anytext
+
+The % command is a comment command. It tells your shell that this is a comment line. Any text after the % 
+will be ignored. The % must occur as the first token on the line.
+
+setprompt prompt
+
+Set the shell prompt to prompt. The default prompt should be ``upsh> ''.
+
+cd directory_name
+
+This command changes the current directory to directory_name.
+
+bgjobs
+
+List all jobs running in the background. Each job listed should be displayed with a job_number that can
+ be used in the fg command. For example, the output might look like
+upsh > bgjobs
+sleep 10 [1]
+sleep 50 [2]
+
+fg job_number
+
+Move job specified by job_number to the foreground.
+
+loadpluggin file_name.so
+
+This built-in command loads a plugging stored in the shared library file with the name file_name.so.
+
+culater
+
+Exit the upsh shell. You should also accept control-D (end-of-file) on the input stream and treat it as if the user had typed ``culater''. That is, if a user types in cntl-D at the command line, your shell will do exactly the same thing it does when it receives the built-in command ``culater''.
+
+The program should be able to do File redirection
+
+Pluggins were explained in individual pluggin readme's
+
+User-Program Commands:
+
+cmd [arg]* [ $<$ infilename ] [ $>$ outfilename ] [ & ]
+
+This will execute a program (i.e., an executable file). It has the following parameters (where some are optional)
+
+
+Program explanation:
+
+
+
+This code is a working shell capable of reading in commands, parsing them, calling fork() and exec() to run the 
+command, and waiting for the process to complete before issuing another command. It is similar to existing shells but 
+lacks advanced functionality that other shells like bash have. We decided to work in a team where we split up the work 
+required by us.

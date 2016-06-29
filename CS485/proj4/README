@@ -1,0 +1,65 @@
+program 4 by Kevin Logan and Carl Groathouse
+Files include:
+README:
+server.c
+client.c
+csapp.c
+csapp.h
+Makefile  //use 'make' to compile the client program
+Makefile2 // use 'make -f Makefile2' to compile the server program
+rrshcommands.txt
+rrshusers.txt
+
+TO RUN PROGRAM: 1. Open an extra terminal window/tab 
+		2. "./rrsh-client 127.0.0.1 4850" on one of them.
+		3. "./rrsh-server 4850" on the other. 
+
+Documentation by Kevin Logan and Carl Groathouse
+
+Description: In this project I implemented a very simple, and far more restrictive, remote shell. I wrote a 
+	Restricted Remote Shell server (called rrsh-server). It limits/restricted access in two ways. First, the rrsh-server
+ 	will wait for users to connect and then will consult a configuration file (rrshusers.txt) to verify that the user is
+ 	allowed to access the rrsh-server. Second, the rrsh-server will verify that the commands typed by the user are allowed 
+	commands. In particular, the rrsh-server will look in a configuration file called rrshcommands.txt for a list of
+ 	allowable programs (commands) that can be run. Commands that are not in the list will be denied by the rrsh server.
+
+text files used:
+rrshusers.txt:
+	 contains a list of users that are allowed to access the server. The file contains one user per line, where a user 
+	 is specified by their username and password (separated by one or more space characters). Blank lines should be ignored.
+
+rrshcommands.txt:
+	 contains a list of commands (i.e., executable programs) that users may execute. The file contains one command
+	 (program) per line. Programs are specified using the file's full path name (e.g., /bin/ls). No parameters are 
+	 allowed. Blank lines should be ignored.
+
+Client:
+	The rrsh-client program will prompt the user for a username, and then for a password (printing
+	 each prompt on a new line). Having read the user's response to these questions, the rrsh-client 
+	will establish a TCP connection to the rrsh-server and send the login information. 
+	If the login fails, the client will terminate. If the login succeeds, the rrsh-client will print 
+	the prompt 'rrsh > ' and will read a command from the user. It will then send the command (unmodified)
+	 to the rrsh-server and wait for the output from the command. When the command completes, your rrsh-client
+	 will receive the string ``RRSH COMMAND COMPLETED\n'', which indicates the command finished. Note 
+	that the string ``RRSH COMMAND COMPLETED\n'' is not written to the client terminal. This particular string 
+	is only to be read by the client, and should not be displayed to the user. At this point your rrsh-client 
+	will reissue the prompt, read another command, send it to the rrsh-server, etc. It will continue to 
+	process commands until the command entered by the user is 'quit'. When the rrsh-client reads a quit 
+	command, it will terminate.
+
+Server:
+	The client will send the username and password to the server. It will check it with rrshusers.txt to see if you inputted
+	a username password that are allowed. If it isn't allowed the server notifies the client that login failed. Otherwise it
+	will pass. After a user has successfully ``logged in'' to the server, the client will begin sending commands to the 
+	server. Each command can be up to 128 characters long and will end with '\n'. The server will parse the 
+	command to determine what program to run - the program will be the first token on the command line. It 
+	will check to see that the requested program is listed in the rrshcommands.txt files. If the command is 
+	not allowed (i.e., cannot be found in the rrshcommands.txt file), the rrsh-server will return (i.e., send) 
+	the string ``Cannot execute 'program' on this server\n'', where program is the name of the executable program 
+	(file) that was not found in the rrshcommands.txt file. The server will then fork() and exec() a child to 
+	handle the user's command and will perform the necessary dup() operations to make standard output flow over 
+	the TCP connection back to the rrsh-client program. When the child process terminates, the rrsh-server 
+	(parent process) will send the string ``RRSH COMMAND COMPLETED\n'' to the rrsh-client, so that the client 
+	will know that the command finished and it can now send another command.
+
+Note when you run the program you can include an ipaddress or DNS name and port.

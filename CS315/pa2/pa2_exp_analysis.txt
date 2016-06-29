@@ -1,0 +1,64 @@
+EXTERNAL DOCUMENTATION
+CS315001 Spring 2015
+Project 2 Milestone 3
+Name: Kevin Logan
+Date: April 25, 2015
+A) PROBLEM SPECIFICATION:
+a) formal problem description: Our task is to design an efficient algorithm for the SDEx: Software-Defined Exchanges,Inc. Our network is defined with a list of cities, and a upper triangular matrix of costs of sending a packet with a[i, j] = w meaning that the cost of communicating between cities with indices i and j is w. The indices correspond to the position of a city in the list. In this matrix w[i, i] = 0. The matrix is upper triangular because the cost of sending a packet from i to j is the same as the cost of sending it from j to i.
+	For contractual reasons, direct connections between some pairs of cities must be always present in this software- defined network, even if the costs of sending packets between them indirectly would be less expensive then sending them directly. The names of those pairs of cities are a part of the input. Our primary task is to design an algorithm that given the network description, plus the description of any additional constraints, computes the minimal cost of broadcasting packets to all of the cities in optimal software-defined exchanges.
+
+
+b) intuitive problem description: For this program we are to input the size of the matrix and amount of cities used as well as the amount of direct links. After that we are to inputwhich specific cities we are going to use, followed by a matrix, and then the specific required pairs for those cities. With this information inputted our program is suppose to use an algorithm to produce the Minimum Spanning Tree. 
+	This program requires that we use these inputs to figure out the amount of edges that we use. also we need the cost of the minimum spanning tree.
+B) SOLUTION
+
+ The solution of the program requires us to use Kruskals algorithm. We use the cities as our nodes, the matrix to identify our edges and weights between each city, and the pairs to tell us what specific edges we need to check first before kruskals algorithm starts finding the minimum spanning tree.
+The program counts the amount of used edges by creating a variable that increases everytime a weight is added to the total cost. Kruskals algorithm is a greedy algorithm that always
+takes the edge with lowest weight. This gives us the lowest cost possible. After everything is generated and complete the used edges and cost are outputted to the screen. The big
+O notation for Kruskals algorithm is O(NlogN) so the big O notation for this program should be the same. 
+
+C) TESTING
+Purpose:
+- testing for correctness: I have difficult inputs that test
+all potential cases and boundary conditions.
+To
+prepare suitable data one needs to undertand what is "difficult" for the
+algorithm and its implementation.  In our case, we want to force the algorithm
+to make many binary search queries, each requiring many calls (or executions)
+of the decision procedure.
+
+In our case, we can consider the following inputs of size 4 and 2 required edges
+
+4 2				4 0
+Lexington			Lexington 
+Pikeville			Pikeville
+Corbin				Corbin
+Paducah				Paducah
+0 5 2 4				0 5 2 4
+0 3 5				0 3 5
+0 5				0 5
+0				0
+Pikeville
+Lexington
+Paducah
+Pikeville
+For both of the inputs that we have above
+tabulate:
+(1) size		Input 1:4						Input 2:4
+(2) required edges		2							0
+(3) The cities			Lexington, Pikeville, Corbin, and Paducah.		Lexington, Pikeville, Corbin, and Paducah.
+(4) The matrix
+(5) The required pairs		(Pikeville, Lexington) and (Paducah, Pikeville)		none
+(6) Used Edges			3							3
+(7) MST Cost			12							9
+For the first input we had 2 required edges between Pikeville and Lexington and then Paducah and Pikeville. This required our program to check 2 of the edges and save there weights
+corresponding with the pairs. This gave us a an edge of weight 5 and another of weight 5. After that was complete kruskals algorithm inspected the graph giving us another edge of 
+weight 2. This completed the generation of the MST and its cost. Every time the program added a weight to the total weight we increased the edges used by 1. In the end we output
+3 used edges and a MST cost of 12.
+For the second input we had 0 required edges. This required our program to check 0 edges of required pairs. After that was complete kruskals algorithm inspected the graph giving us our first edge of weight 2, then again for an edge of weight 3, and then finally an edge of weight 4. This completed the generation of the MST and its cost. Every time the program 
+added a weight to the total weight we increased the edges used by 1. In the end we output 3 used edges and a MST cost of 9. 
+
+Analyze the results: As you can see the amount of required edges can change our final amount cost. The program follows of the tasks required for milestone 2 and 3. It's fair to say that our Big o notation for the program is the same as kruskals algorithm. The program works accuratly and efficiently.
+ADDITIONAL NOTES:
+I finished the Extra Credit that would allow the program to output IMPOSSIBLE.
+Very efficient Algorithm.

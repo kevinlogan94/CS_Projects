@@ -1,0 +1,58 @@
+Script started on Sun 26 Apr 2015 08:39:09 PM EDT
+[4mpenstemon[24m:[1m~/CS315/pa2[0m> make
+make: `pa2m2cs315s15' is up to date.
+[4mpenstemon[24m:[1m~/CS315/pa2[0m> ./tester.sh
+pa2 cs315001s15: MST Kruskals Algorithm
+------------------
+output expected: 3 9
+output computed
+3
+9
+------------------
+output expected: 3 12
+output computed
+3
+12
+------------------
+output expected: 4 16
+output computed
+4
+16
+------------------
+output expected: 8 14
+output computed
+8
+14
+------------------
+output expected: 8 14
+output computed
+8
+14
+------------------
+output expected: 8 19
+output computed
+8
+19
+------------------
+output expected: 99 1533
+output computed
+99
+1533
+------------------
+output expected: 100 100
+output computed
+100
+100
+------------------
+output expected: 99 200
+output computed
+99
+200
+output expected: IMPOSSIBLE
+output computed
+IMPOSSIBLE
+----END-----------
+[4mpenstemon[24m:[1m~/CS315/pa2[0m> x[Kexit
+exit
+
+Script done on Sun 26 Apr 2015 08:39:24 PM EDT

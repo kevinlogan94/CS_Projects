@@ -1,0 +1,25 @@
+CS-315 Spring 2015
+JWJ CS-UK
+This code uses Kruskal's algorithm to find
+the minimum spanning tree. This code can be extended to
+solve the problem for pa2 cs315s15.
+
+Use "make" in the directory to build the
+executable. Input and Output are
+as specified by graph.h and graph.cpp 
+and ouptut specs.
+
+FILES:
+README	this file
+edge.cpp	a simple class to store edges and compare their weights
+edge.h
+graph.cpp	a matrix for graph-representation
+graph.h
+main.cpp
+makefile
+mst1.out	tests
+mst1.in
+mst100.in
+mst100.out
+unionfind.cpp	a simple UNION-FIND
+unionfind.h

@@ -1,0 +1,152 @@
+Script started on Mon 02 Feb 2015 10:03:13 PM EST
+[4mpenstemon[24m:[1m~/pa1[0m> cd p[Ktests
+[4mpenstemon[24m:[1m~/pa1/tests[0m> g++ --std=c++0x pa1.cpp
+[4mpenstemon[24m:[1m~/pa1/tests[0m> ./tester.sh
+pa1 cs315001s15: d -smoothness...
+------------------
+output expected: 2
+output computed
+Input
+
+Output
+2
+Comparison #
+42
+------------------
+output expected: 4
+output computed
+Input
+
+Output
+4
+Comparison #
+51
+------------------
+output expected: 5
+output computed
+Input
+
+Output
+5
+Comparison #
+34
+------------------
+output expected: 7
+output computed
+Input
+
+Output
+7
+Comparison #
+89
+------------------
+output expected: 16
+output computed
+Input
+
+Output
+16
+Comparison #
+89
+------------------
+output expected: 19
+output computed
+Input
+
+Output
+19
+Comparison #
+160
+------------------
+output expected: 45
+output computed
+Input
+
+Output
+45
+Comparison #
+199
+------------------
+output expected: 95
+output computed
+Input
+
+Output
+95
+Comparison #
+1809
+------------------
+output expected: 103
+output computed
+Input
+
+Output
+103
+Comparison #
+2013
+------------------
+output expected: 192
+output computed
+Input
+
+Output
+192
+Comparison #
+3852
+------------------
+output expected: 371
+output computed
+Input
+
+Output
+371
+Comparison #
+64
+------------------
+output expected: 1
+output computed
+Input
+
+Output
+1
+Comparison #
+42
+------------------
+output expected: 46
+output computed
+Input
+
+Output
+46
+Comparison #
+35
+------------------
+output expected: 3
+output computed
+Input
+
+Output
+3
+Comparison #
+19
+------------------
+output expected: 6
+output computed
+Input
+
+Output
+6
+Comparison #
+37
+------------------
+output expected: 4
+output computed
+Input
+
+Output
+4
+Comparison #
+52
+----END-----------
+[4mpenstemon[24m:[1m~/pa1/tests[0m> exit
+Script done on Mon 02 Feb 2015 10:04:15 PM EST

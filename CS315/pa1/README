@@ -1,0 +1,57 @@
+README
+CS 315-001 Spring 2015
+Program Assignment 1, Milestone 3
+February, 2015
+name: Kevin Mitchell Logan
+Synopsis:  //adjust as necessary
+To compile: g++ --std=c++0x pa1.cpp
+Input for this program  should follow the specs.
+To run:
+“./a.out < tests/test1.in”
+or
+“./tester.sh” in the tests file
+where test1.in can be replaced with any other text file.  The only output that
+will be presented is an integer which returns the smallest d such that the
+sequence is d-smooth, followed by the number of comparisons for the test.
+A typescript (generated with the UNIX script command) is provided to show use
+of all included source files and executables
+
+Included Files: //adjust as necessary
+README - current file
+pa1.cpp - source code for milestone 3 algorithm with result and comparison
+count output to console
+tester.sh - shell script to generate and run tests for experimental analysis
+script.txt - sample session showing commands, inputs, and outputs
+pa1_exp_analysis.txt - txt file with experimental analysis report
+tests - tests directory has test files used in experimental analysis
+Bugs and Extras:
+No bugs have been found to date.
+Algorithm Description:
+The algorithm that I used focused on using binary search to identify the lowest D-smooth.
+	You input the t sequence into the program and it creates a sequence from 0 to the sum of the 
+	integer in the t sequence. It then takes the middle number of that sequence and tests
+	if it is a valid D. Depending on whether it is a valid D or not the binary search makes this list 
+	go up or down in order the find the perfect d-smooth.  
+The theoretical running time of my algorithm is O(nlogM)
+Algorithm Example:
+Consider the following input sequence.
+5
+25
+11
+2
+13
+20
+
+Length is 5
+Output d is equal to 13
+tsequence 25 11 2 13 20
+Iterator i starts at 25 and goes through the rest of the numbers in the tsequence and checks that 25 is the
+highest number in the tsequence. It then takes the sum of all the integers in the sequence and makes that the highest int. It then creates a sequence from 0 to 71, it then looks at the middle 
+number in the sequence which is 35. It checks if the number is a valid D and it is so the restrictions for the sequence are moved to 0 to 35. It then takes the middle integer of that which is 17. It checks if the
+number is a valid D and it is so the restrictions are moved to 0 to 17. It finds the next middle integer of that which is 8. It determines that it isnt a valid D and moves the restiction to 9 to 17. It finds the 
+middle integer of that which is 13. It finds that it is a valid D and moves the restriction to 13 to 17. It then checks 15 which is a valid D. Now the restriction is 13 to 15. It then tests 14 which is a correct D is as well so it soon it gets a restriciton of 13 so that is the perfect D-smooth.  This uses binary search to search for the perfect D. 
+
+Testing: 
+Test files are stored in the tests directory.
+Results can be found in the script.txt file and in the experimental analysis.
+Test analysis can be found in the Experimental Analysis document

@@ -1,0 +1,44 @@
+README
+CS 315-001 Spring 2015
+Program Assignment 2, Milestone 3
+April, 2015
+name: Kevin Mitchell Logan
+Synopsis:
+To compile: make
+Input for this program  should follow the specs.
+To run:
+./pa2m2cs315s15 in1.in
+where in1.in can be replaced with any other text file.  The output will consist of two integers. The first will be the edges used and the second will be the total cost of the MST. 
+Included Files: //adjust as necessary
+README - current file
+tester.sh - shell script to generate and run tests for experiemental analysis
+main.cpp - main code used include kruskal's algorithm
+RESULTS.txt - sample session showing commands, inputs, and outputs
+tests - test case .txt files including in1.in, in2.in, in3.in, in100.in, in100c.in, in100e.in, in9.in, 
+in9c.in, in9d.in,  and mstEC.txt EXTRA CREDIT ASSIGNMENT.
+Bugs and Extras:
+No bugs have been found to date.
+Algorithm Description:
+The Kruskal algorithm is an algorithm we use in the program to find the minimum spanning tree. It goes through the map generated from the matrix and cities. It looks through the distances between them all and takes the smallest distance and checks it. It then repeats checking the next smallest path until we have the priority queue of edges 
+exhausted.  If we have a required pair, the edge is checked first.
+Algorithm Example
+Consider the following input sequence.
+4 2
+Lexington
+Louisville
+Corbin
+Paducah
+0 5 2 4
+0 3 5
+0 5
+0
+Lexington
+Louisville
+Corbin
+Paducah
+The amount of edges used is 3
+The total cost is 12
+Testing: in1.in, in2.in, in3.in, in100.in, in100c.in, in100e.in, in9.in,  
+in9c.in, in9d.in,and mstEC.txt IS THE EXTRA CREDIT FOR MILESTONE 2.
+Test files are stored in the pa2 file with the rest of the files
+Results can be found in the RESULTS.txt file.

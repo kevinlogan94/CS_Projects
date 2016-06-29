@@ -1,0 +1,15 @@
+/bin/ls
+/bin/wc
+/bin/echo
+/bin/cat
+/bin/date
+/bin/ip
+/bin/kill
+/bin/sleep
+/bin/pwd
+/bin/rm
+/bin/chmod
+/bin/cp
+/bin/tar
+/bin/uname
+/bin/which
