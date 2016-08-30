@@ -1,1 +1,2 @@
-Go to JSBIN.com to easily Set these files up!
+#REACT Files
+Go to jsbin.com to easily set these files up!
