@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Blackjack by Kevin Logan</TITLE>
+	<script src="script.js"></script>
+</HEAD>
+<BODY >
+<FORM NAME="JForm">
+<CENTER>
+  <TABLE CELLPADDING=2 CELLSPACING=2 STYLE="page-break-before: always">
+   <TR>
+    <TH STYLE="border: none; padding: 0in">
+	<P>New deal</P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=BUTTON VALUE="Shuffle" STYLE="width: 1.08in; height: 0.4in" ONCLICK="shuffle();"> </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P>Reset</P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=BUTTON VALUE="Reset" STYLE="width: 0.75in; height: 0.4in" ONCLICK="resetdata();"> </P>
+    </TH>
+   </TR>		<!-- row 1 -->
+   <TR>
+    <TH STYLE="border: none; padding: 0in">
+	<P>Dealer score: </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=TEXT NAME="opscore" VALUE="" SIZE=5 STYLE="width: 0.51in; height: 0.31in"> </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P>My score: </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=TEXT NAME="myscore" VALUE="" SIZE=5 STYLE="width: 0.51in; height: 0.31in"> </P>
+    </TH>
+	<TD COLSPAN=2 VALIGN=TOP STYLE="border: none; padding: 0in"></TD>
+   </TR>		<!-- row 2 -->
+   <TR>
+    <TH STYLE="border: none; padding: 0in">
+	<P>Win/Loss?: </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=TEXT NAME="myresult" VALUE="" SIZE=5 STYLE="width: 0.51in; height: 0.31in"> </P>
+    </TH>
+<!--			<TD COLSPAN=2 VALIGN=TOP STYLE="border: none; padding: 0in"></TD>  -->
+    <TH STYLE="border: none; padding: 0in">
+	<P>My win %: </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in"> 
+	<P><INPUT TYPE=TEXT NAME="winning" VALUE="" SIZE=5 STYLE="width: 0.51in; height: 0.31in"> </P>
+    </TH>
+    <TD VALIGN=TOP STYLE="border: none; padding: 0in"></TD>
+   </TR>		<!-- row 3 -->
+   <TR>
+    <TH STYLE="border: none; padding: 0in">
+	<P>Deal/Hit</P> 
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=BUTTON VALUE="Deal/Hit" STYLE="width: 0.64in; height: 0.4in" ONCLICK="dealorhit();"> </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P>Stay</P> 
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=BUTTON VALUE="Stay" STYLE="width: 0.59in; height: 0.4in" ONCLICK="run();"> </P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in"> 
+	<P>Run 1000 times</P>
+    </TH>
+    <TH STYLE="border: none; padding: 0in">
+	<P><INPUT TYPE=BUTTON VALUE="Run" STYLE="width: 0.59in; height: 0.4in" ONCLICK="run1000();"> </P>
+    </TH>
+   </TR>		<!-- row 4 -->
+  </TABLE>
+</CENTER>
+</FORM>
+
+<h2 align=center>Dealer's Cards</h2>
+<div id="dlcards" align=center> 
+	<h2  align=center></h2>
+</div>
+<h2  align=center> My Cards</h2>
+<div id="mycards" align=center >
+	<h2 class="WESTERN" align=center></h2>
+</div>
+
+</BODY>
+</HTML>
+
