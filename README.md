@@ -1,3 +1,3 @@
 # CS_Projects
-Repository containing several computer science projects I completed at the University of Kentucky
-NOTE: I have not updated these projects since I completed them.
+Repository containing several programming projects I completed in the past couple of years.
+NOTE: I have not updated these projects since I originally completed them.
