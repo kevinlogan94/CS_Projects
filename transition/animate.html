@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery and AJAX</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="jquery-3.0.0.js"></script>
+    <script type="text/javascript">
+        function isElementInViewport (el) {
+            //special bonus for those using jQuery
+            if (typeof jQuery === "function" && el instanceof jQuery) {
+                el = el[0];
+            }
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                /*or $(window).height() */
+
+                /*If you want to check horizontal placement
+                && rect.left >= 0
+                && rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+            );
+        }
+
+        $(window).load(function() {
+            $("body").removeClass("preload");
+        });
+    </script>
+</head>
+
+<body>
+    <div id='row'>
+        <div class='Left'>Left Div</div>
+        <div class='Right'>Right Div</div>
+    </div>
+    <div id='row2'>
+        <div class='Left'>Left Div</div>
+        <div class='Right'>Right Div</div>
+    </div>
+    <div id='row3'>
+        <div class='Left'>Left Div</div>
+        <div class='Right'>Right Div</div>
+    </div>
+    <div id='space'></div>
+
+
+    <script>
+
+        function onVisibilityChange(el, callback) {
+            return function () {
+                var visible = isElementInViewport(el);
+                if (typeof callback == 'function'){
+                    callback(visible);
+                }
+            }
+        }
+
+        var handler = onVisibilityChange(document.getElementById('row'), function(visible) {
+            /* your code go here */
+            if(visible){
+              $('#row .Left').addClass('animate');
+              $('#row .Right').addClass('animate');
+            }
+            else {
+              $('#row .Left').removeClass('animate');
+              $('#row .Right').removeClass('animate');
+            }
+        });
+
+        var handler2 = onVisibilityChange(document.getElementById('row2'), function(visible) {
+            /* your code go here */
+            if(visible){
+              $('#row2 .Left').addClass('animate');
+              $('#row2 .Right').addClass('animate');
+            }
+            else {
+              $('#row2 .Left').removeClass('animate');
+              $('#row2 .Right').removeClass('animate');
+            }
+        });
+
+        var handler3 = onVisibilityChange(document.getElementById('row3'), function(visible) {
+            /* your code go here */
+            if(visible){
+              $('#row3 .Left').addClass('animate');
+              $('#row3 .Right').addClass('animate');
+            }
+            else {
+              $('#row3 .Left').removeClass('animate');
+              $('#row3 .Right').removeClass('animate');
+            }
+        });
+
+        $(window).on('DOMContentLoaded load resize scroll', handler);
+        $(window).on('DOMContentLoaded load resize scroll', handler2);
+        $(window).on('DOMContentLoaded load resize scroll', handler3);
+
+        $('button').click(function(){
+            $('button').animate({height:'50px'});
+        });
+    </script>
+</body>
+
+</html>
