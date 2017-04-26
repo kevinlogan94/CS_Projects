@@ -20,7 +20,7 @@
     transition:all 0.5s linear;
     margin-left: -50%;
     background-image: url('images/fantasy.jpg');
-    background-size: 100% 100%;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
@@ -28,7 +28,7 @@
     margin-left:0px;
     background:red;
     background-image: url('images/fantasy.jpg');
-    background-size: 100% 100%;
+    background-size: 100%;
     background-repeat: no-repeat;
     /*-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
    /* -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
@@ -47,7 +47,7 @@
 
 .Right.animate{
     background-image: url('images/nike.png');
-    background-size: 100% 100%;
+    background-size: 100%;
     background-repeat: no-repeat;
     position:relative;
     left:0em;
